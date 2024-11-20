@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Problem Solving With C++ (LeetCode).cpp">
+    <ClCompile Include="Array Problems.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
