@@ -13,7 +13,16 @@ vector<int> buildArray(vector<int>& nums) {
     return ans;
 }
 
+// Problem 2 : 1929. Concatenation of Array : 
 
+vector<int> getConcatenation(vector<int>& nums) {
+    vector<int> ans;
+    int n = nums.size();
+    for (int i = 0; i < 2 * n; i++) {
+        (i < n) ? ans.push_back(nums[i]) : ans.push_back(nums[i - n]);
+    }
+    return ans;
+}
 
 
 
