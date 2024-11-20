@@ -24,6 +24,30 @@ vector<int> getConcatenation(vector<int>& nums) {
     return ans;
 }
 
+// Problem 3 : 1480. Running Sum of 1d Array
+
+vector<int> runningSum(vector<int>& nums) {
+    vector<int> result;
+    int sum = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        for (int j = 0; j <= i; j++)
+        {
+            sum += nums[j];
+        }
+        result.push_back(sum);
+        sum = 0;
+    }
+    return result;
+}
+
+//----- Other Optimized Solution : ------
+vector<int> runningSum(vector<int>& nums) {
+    for (int i = 1; i < nums.size(); i++) {
+        nums[i] += nums[i - 1];
+    }
+    return nums;
+}
+
 
 
 
