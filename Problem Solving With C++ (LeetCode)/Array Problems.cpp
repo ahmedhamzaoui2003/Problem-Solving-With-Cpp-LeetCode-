@@ -75,4 +75,67 @@ int maximumWealth(vector<vector<int>>& acc) {
     return  max;
 }
 
+// Problem 5 : 1470. Shuffle the Array :  
+
+vector<int> shuffle(vector<int>& nums, int n) {
+    vector<int> vX(nums.begin(), nums.begin() + n);
+    vector<int> vY(nums.begin() + n, nums.end());
+
+    int counterX = 0, counterY = 0;
+
+    vector<int> result;
+    for (int i = 0; i < 2 * n; i++) {
+        if (i % 2 == 0) result.push_back(vX[counterX++]);
+        else result.push_back(vY[counterY++]);
+    }
+    return result;
+
+}
+
+// ------other method using a simple solution 0(n/2)---------------
+vector<int> shuffle(vector<int>& nums, int n) {
+   
+    vector<int> result;
+    for (int i = 0; i <n; i++) {
+        result.push_back(nums[i]);
+        result.push_back(nums[i + n]);
+    }
+    return result;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
