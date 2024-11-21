@@ -49,6 +49,30 @@ vector<int> runningSum(vector<int>& nums) {
 }
 
 
+// Problem 4 : 1672. Richest Customer Wealth : 
 
+int maximumWealth(vector<vector<int>>& accounts) {
+    int max = 0;
+    for (int i = 0; i < accounts.size(); i++) {
+        int sum = 0;
+        for (int j = 0; j < accounts[i].size(); j++) {
+            sum += accounts[i][j];
+        }
+        if (sum > max) max = sum;
+    }
+    return  max;
+}
+
+// ------ Other method (using accumulate(v.begin() ,v.end(),0) => to find the sum of a vector ) -----
+
+int maximumWealth(vector<vector<int>>& acc) {
+    int max = 0;
+    int sum = 0;
+    for (int i = 0; i < acc.size(); i++) {
+        sum = accumulate(acc[i].begin(), acc[i].end(), 0);
+        if (sum > max) max = sum;
+    }
+    return  max;
+}
 
 
