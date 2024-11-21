@@ -104,6 +104,30 @@ vector<int> shuffle(vector<int>& nums, int n) {
 
 }
 
+// Problem 6 : 1431. Kids With the Greatest Number of Candies
+
+// my bad solution :
+vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+    vector<bool> result;
+
+    for (int i = 0; i < candies.size(); i++) {
+        candies[i] += extraCandies;
+        int max = *max_element(candies.begin(), candies.end());
+        (max == candies[i]) ? result.push_back(true) : result.push_back(false);
+        candies[i] -= extraCandies;
+    }
+    return result;
+}
+
+// --------------Other Optimized Solution ----------------------
+
+
+vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+    double most = *max_element(candies.begin(), candies.end());
+    vector<bool> a;
+    for (int c : candies) a.push_back(c + extraCandies >= most);
+    return a;
+}
 
 
 
