@@ -130,8 +130,15 @@ vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
 }
 
 
+// Problem 7 : 1512. Number of Good Pairs
 
-
+int numIdenticalPairs(vector<int>& nums) {
+    int goodPairs = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        goodPairs += count(nums.begin() + i + 1, nums.end(), nums[i]);
+    }
+    return goodPairs;
+}
 
 
 
