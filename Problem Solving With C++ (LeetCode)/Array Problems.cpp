@@ -157,6 +157,17 @@ vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
 }
 
 
+// Problem 9 : 1389. Create Target Array in the Given Order
+
+vector<int> createTargetArray(vector<int>& nums, vector<int>& index) {
+    vector<int> target;
+    for (int i = 0; i < index.size(); i++) {
+        target.insert(target.begin() + index[i], nums[i]);
+    }
+    return target;
+}
+
+
 
 
 
