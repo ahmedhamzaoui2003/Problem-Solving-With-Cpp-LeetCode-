@@ -167,8 +167,15 @@ vector<int> createTargetArray(vector<int>& nums, vector<int>& index) {
     return target;
 }
 
+// Problem 10 : 1832. Check if the Sentence Is Pangram
 
-
+// as Simple as that : beginner solution 
+bool checkIfPangram(string sentence) {
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+    for (char c : alphabet) 
+        if (sentence.find(c) == string::npos)   return false;
+    return true;
+}
 
 
 
